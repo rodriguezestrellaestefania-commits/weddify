@@ -1,0 +1,210 @@
+.register-page {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Vídeo de fondo */
+
+.register-background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* Capa oscura sobre el vídeo */
+
+.register-video-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1;
+}
+
+/* Contenedor del formulario */
+
+.register-box {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 420px;
+  padding: 40px;
+  box-sizing: border-box;
+
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 24px;
+
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+  color: #ffffff;
+  text-align: center;
+
+  animation: registerFadeIn 0.6s ease-out;
+}
+
+/* Título */
+
+.register-box h1 {
+  margin: 0 0 10px;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+/* Subtítulo */
+
+.register-box > p {
+  margin: 0 0 28px;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Formulario */
+
+.register-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Inputs */
+
+.register-box input {
+  width: 100%;
+  padding: 15px 18px;
+  box-sizing: border-box;
+
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
+
+  color: #ffffff;
+  font-size: 15px;
+  outline: none;
+
+  transition: all 0.25s ease;
+}
+
+.register-box input::placeholder {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.register-box input:focus {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+}
+
+/* Botón de registro */
+
+.register-box button {
+  width: 100%;
+  padding: 15px;
+  margin-top: 8px;
+
+  background: #ffffff;
+  color: #1a1a1a;
+
+  border: none;
+  border-radius: 12px;
+
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+.register-box button:hover:not(:disabled) {
+  background: #e8e8e8;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.register-box button:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.register-box button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Mensajes de error */
+
+.register-box .register-error {
+  padding: 12px;
+  margin-bottom: 20px;
+
+  background: rgba(239, 68, 68, 0.18);
+  border: 1px solid rgba(239, 68, 68, 0.5);
+  border-radius: 10px;
+
+  color: #fecaca;
+  font-size: 14px;
+}
+
+/* Enlace al login */
+
+.register-box .register-login-text {
+  margin-top: 25px;
+  margin-bottom: 0;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.register-login-text a {
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.register-login-text a:hover {
+  text-decoration: underline;
+}
+
+/* Animación de entrada */
+
+@keyframes registerFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+
+@media (max-width: 480px) {
+  .register-box {
+    padding: 30px 24px;
+    border-radius: 20px;
+  }
+
+  .register-box h1 {
+    font-size: 28px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .register-box {
+    animation: none;
+  }
+}
